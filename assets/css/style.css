@@ -1,106 +1,115 @@
+/* change the colors in the below section to apply the different scheme to the whole page */
 :root{
   --globalcolor:#fff;
+  --background-space: #454d54;
+  --highlight: #25cdae;
+  --textcolor:#e5f1ea;
+  --boxbackground: #d75edc;
 }
- /* Flexbox */
-.container {
-  display:flex
 
+html {
+  color: var(--textcolor);
+  background-color: var(--background-space);
+  font-family: sans-serif;
 }
 
 body {
   font-size: 16px;
-  display: flex;
-  flex-direction: column;
   min-height: 100vh;
-  justify-content: flex-start;
 }
 
-h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-}
-
-h2 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-}
-
-header {
-  padding: 40px;
-  text-align: center;
-  background: #13293d;
-  color:var(--globalcolor);
-  /*color: #fff;*/
-}
-
-nav {
-  display: flex;
-  background-color: #d8a47f;
-}
-
-nav a {
-  color: #13293d;
-  padding: 14px 20px;
-  text-decoration: none;
-  text-align: center;
-}
-
-.snippet header:hover {
-  background-color: #fff;
-}
+ /* Flexbox */
 
 main {
+  flex: 1;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  
 }
 
-footer {
-  width: 100%;
-  bottom: 0;
+.headup {
   padding: 20px;
   text-align: center;
-  background: #13293d;
-  color: var(--globalcolor);
-  margin-top: auto;
+ 
 }
 
-.container {
-  flex: 1;
-  background-color: #fff;
-  padding: 50px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+.headup h1 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: var(--boxbackground);
+}
+
+.headup p {
+  color:var(--textcolor);
+  font-size: 70%;
+  margin-bottom: -20px;
 }
 
 .snippet {
-  border-style: solid;
+  border-style:dashed;
   border-width: 1px;
   border-radius: 5px;
   padding: 10px;
-  flex: 0 0 300px;
+  flex: 0 0 270px;
   /*transform: rotate(8deg);*/
-  box-shadow: 10px 10px 5px #aaaaaa;
-  margin: 20px;
+  /*box-shadow: 10px 10px 5px #aaaaaa;*/
+  margin: 5px;
+  margin-top: 50px;
 }
 
-.snippet > header {
+.snippet header {
   border-radius: 5px;
-  padding: 20px;
-}
-
-.snippet > pre {
-  background-color: rgba(4, 126, 170, 0.618);
-  border-radius: 5px;
-}
-
-.snippet > p {
+  padding: 3px;
+  color: var(--boxbackground);
+  font-weight: bold;
+  font-size: 140%;
   text-align: center;
+  border-color: var(--textcolor);
+  border-style: solid;
+  margin-top: -25px;
+  background-color: var(--background-space);
 }
 
-.snippet > img {
-  width: 100%;
+.snippet pre {
+  background-image: linear-gradient(var(--background-space), var(--boxbackground));
+  border-radius: 5px;
+  font-size: 80%;
+  margin-top: 5px;
+
 }
+
+.snippet p {
+  color: var(--boxbackground);
+  font-size: 80%;
+  margin-top: 10px;
+}
+
+/* changes background when user is hovering over */
+
+/*.snippet:hover {
+  background-color: var(--textcolor);
+
+}
+*/
+.snippet pre:active {
+  user-select: all;
+}
+/* glowing when user is hovering over it */
+.snippet, header {
+  border-radius: 8px;
+  transition: all 0.5s ease-in-out;
+}
+.snippet:hover, header:hover {
+   box-shadow: inset 0px 0px 8px rgba(232,102,236,1), 0 0 15px rgba(232, 102, 236, 1);
+}
+footer {
+  bottom: 0;
+  padding: 20px;
+  text-align: center;
+  margin-top: auto;
+}
+
 /*
 @media screen and (max-width: 768px) {
   main,
