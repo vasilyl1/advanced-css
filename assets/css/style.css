@@ -100,7 +100,7 @@ main {
   border-radius: 8px;
   transition: all 0.5s ease-in-out;
 }
-.snippet:hover, header:hover {
+.snippet:hover, .snippet:hover header {
    box-shadow: inset 0px 0px 8px rgba(232,102,236,1), 0 0 15px rgba(232, 102, 236, 1);
 }
 footer {
